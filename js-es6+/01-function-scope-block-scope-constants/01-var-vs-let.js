@@ -22,9 +22,29 @@ console.log("guessMe: " + guessMe); // D: guessMe is 2
 };
 //accessing test will give an error here
 
-// Var age is the temporal dead zone
+// Var age is logged as undefined, since age was hoisted and initialized with undefined
 function logAge() {
-    console.log( 'age:', age ); // Temporal dead zone
+    console.log( 'age:', age ); // undefined
     var age = 25;
 }
 logAge();
+
+// let is hoisted similarly to var, but it's not initialized as undefined
+// name is console.log is in temporal dead zone
+function logName() {
+    console.log( 'name:', name ); // temporal dead zone
+    let name = 'Ben';
+}
+logName();
+
+// The temporal dead zone exists even if a variable with the same name exists outside the scope of the dead zone.
+
+let test2 = 1;
+console.log( 'test2: ', test2 );// A: test2 is 1
+{
+    // Temporal Dead Zone of test2
+    //console.log( 'guessMe: ', test2 ); <- This would give an error
+    let test2 = 2;
+    console.log( 'test2: ', test2 );// C: test2 is 2
+}
+console.log( 'test2: ', test2 );// D: test2 is 1
