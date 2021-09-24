@@ -29,6 +29,7 @@ function logAge() {
 }
 logAge();
 
+// Variables declared with let have block scope. They are valid inside the block they are defined in.
 // let is hoisted similarly to var, but it's not initialized as undefined
 // name is console.log is in temporal dead zone
 function logName() {
