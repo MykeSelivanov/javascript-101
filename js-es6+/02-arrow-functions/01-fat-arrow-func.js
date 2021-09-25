@@ -24,3 +24,7 @@ console.log(sum(2, 3));
 
 var square = a => a * a;
 console.log(square(2));
+
+// Ex
+// Write an arrow function that expects an array of integers, and returns the sum of the elements of the array.
+const sum = (arr) => arr.reduce((a,b) => a + b);
