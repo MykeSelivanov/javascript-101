@@ -42,3 +42,8 @@ function printArgs( first = 'No arguments' ) {
     console.log( arguments );
 }
 printArgs();
+
+// Ex1
+// Write a function that executes a callback function after a given delay in milliseconds. 
+// The default value of delay is one second.
+
