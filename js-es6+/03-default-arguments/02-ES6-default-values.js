@@ -46,4 +46,13 @@ printArgs();
 // Ex1
 // Write a function that executes a callback function after a given delay in milliseconds. 
 // The default value of delay is one second.
+function executeCallback( callback, delay = 1000 ) {
+	console.log('Delay: ' + delay);
+  setTimeout( callback, delay );
+}
+
+//Edit about this line 
+executeCallback( () => console.log('Done'));
+
+// Ex2
 
