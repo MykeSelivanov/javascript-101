@@ -51,8 +51,15 @@ function executeCallback( callback, delay = 1000 ) {
   setTimeout( callback, delay );
 }
 
-//Edit about this line 
 executeCallback( () => console.log('Done'));
 
 // Ex2
+// printComment has a default value that’s initially 1, and is incremented by 1 after each call.
+let lineNumber = 1;
 
+function printComment( comment, line = lineNumber++ ) {
+  console.log( line, comment );
+}
+
+for (var i = 1; i <= 5; i++)
+  printComment('I should be lineNumber ' + i);
