@@ -55,6 +55,9 @@ executeCallback( () => console.log('Done'));
 
 // Ex2
 // printComment has a default value that’s initially 1, and is incremented by 1 after each call.
+
+// We create a new variable lineNumber which is initialized to 1. 
+// This way, we are updating a variable rather than changing the default argument of the printComment function each time.
 let lineNumber = 1;
 
 function printComment( comment, line = lineNumber++ ) {
