@@ -50,7 +50,6 @@ function executeCallback( callback, delay = 1000 ) {
 	console.log('Delay: ' + delay);
   setTimeout( callback, delay );
 }
-
 executeCallback( () => console.log('Done'));
 
 // Ex2
@@ -59,10 +58,32 @@ executeCallback( () => console.log('Done'));
 // We create a new variable lineNumber which is initialized to 1. 
 // This way, we are updating a variable rather than changing the default argument of the printComment function each time.
 let lineNumber = 1;
-
 function printComment( comment, line = lineNumber++ ) {
   console.log( line, comment );
 }
-
 for (var i = 1; i <= 5; i++)
   printComment('I should be lineNumber ' + i);
+
+  // Ex3
+function argList( productName, price = 100 ) {
+    console.log( arguments.length ); //(A)
+    console.log( productName === arguments[0] ); //(B)
+    console.log( price === arguments[1] ); //(C)
+};
+argList( 'Krill Oil Capsules' );
+
+// A - 1
+// // Even though we have specified that our function can have 2 arguments, we’ve already learned that it isn’t necessary 
+// to provide both. In argList( 'Krill Oil Capsules' );, we specify the first argument. 
+// Hence, the length of our arguments array is 1.
+
+// B - true
+// Here, we are simply checking whether or not the productName argument exists. 
+// Since, we passed 'Krill Oil Capsules' into the function, the console will display true for this statement.
+
+// C - false
+// This is the interesting part. The price argument has a default value of 100. 
+// However, it is not considered to be an argument which we have passed into the function. 
+// As a result, the comparative statement price === arguments[1] will return false because arguments[1] is undefined.
+
+
