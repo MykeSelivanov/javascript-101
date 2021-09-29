@@ -3,7 +3,8 @@
 // - additional operations extending the prototype
 // - reference to the parent prototype
 
-
+// Your code becomes more readable, when you capitalize class names, and start object names and method names 
+// with a lower case letter. For instance, Person should be a class, and person should be an object.
 
 class Shape {
     constructor( color ) {
