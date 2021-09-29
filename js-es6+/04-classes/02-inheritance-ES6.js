@@ -1,3 +1,10 @@
+// Classes may encapsulate
+// - a constructor function
+// - additional operations extending the prototype
+// - reference to the parent prototype
+
+
+
 class Shape {
     constructor( color ) {
         this.color = color;
