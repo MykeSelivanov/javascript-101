@@ -85,5 +85,3 @@ argList( 'Krill Oil Capsules' );
 // This is the interesting part. The price argument has a default value of 100. 
 // However, it is not considered to be an argument which we have passed into the function. 
 // As a result, the comparative statement price === arguments[1] will return false because arguments[1] is undefined.
-
-
