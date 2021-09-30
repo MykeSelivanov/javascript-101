@@ -31,3 +31,4 @@ let rectangle = new Rectangle( 'red', 5, 8 );
 console.log( rectangle.getArea() );
 console.log( rectangle.getColor() );
 console.log( rectangle.toString() );
+
