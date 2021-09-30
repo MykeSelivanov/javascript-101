@@ -38,3 +38,4 @@ let rectangle = new Rectangle( 'red', 5, 8 );
 console.log( "Area:\t\t" + rectangle.getArea() );
 console.log( "Color:\t\t" + rectangle.getColor() );
 console.log( "toString:\t" + rectangle.toString() );
+
