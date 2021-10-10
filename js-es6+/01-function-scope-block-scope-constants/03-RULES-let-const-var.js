@@ -1,4 +1,4 @@
-// Rule 1: use let for variables, and const for constants whenever possible. 
+// Rule 1: use let for variables, and const for constants whenever possible.
 // Use var only when you have to maintain legacy code.
 
 // Rule 2: Always declare and initialize all your variables at the beginning of your scope.
