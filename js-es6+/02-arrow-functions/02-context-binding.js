@@ -27,69 +27,69 @@
 // by using the bind function.
 
 // ES5 with self
-var Ball = function( x, y, vx, vy ) {
+var Ball = function (x, y, vx, vy) {
     this.x = x;
     this.y = y;
     this.vx = vx;
     this.vy = vy;
     this.dt = 25; // 1000/25 = 40 frames per second
     var self = this;
-    setInterval( function() { 
-        self.x += vx;  
+    setInterval(function () {
+        self.x += vx;
         self.y += vy;
-        console.log( self.x, self.y );
-    }, this.dt );
+        console.log(self.x, self.y);
+    }, this.dt);
 }
 
-var ball = new Ball( 0, 0, 1, 2 );
+var ball = new Ball(0, 0, 1, 2);
 
 // ES5 with .bind()
 // The bind method binds the context of the setInterval function argument to this.
-var Ball2 = function( x, y, vx, vy ) {
+var Ball2 = function (x, y, vx, vy) {
     this.x = x;
     this.y = y;
     this.vx = vx;
     this.vy = vy;
     this.dt = 25; // 1000/25 = 40 frames per second
-    setInterval( function() { 
-        this.x += vx;  
+    setInterval(function () {
+        this.x += vx;
         this.y += vy;
-        console.log( this.x, this.y );
-    }.bind( this ), this.dt );
+        console.log(this.x, this.y);
+    }.bind(this), this.dt);
 }
 
 // ES6
 // In ES6, arrow functions come with automatic context binding. The lexical value of this 
 // isn’t shadowed by the scope of the arrow function. Therefore, you save yourself thinking about context binding.
-var BallES6 = function( x, y, vx, vy ) {
+var BallES6 = function (x, y, vx, vy) {
     this.x = x;
     this.y = y;
     this.vx = vx;
     this.vy = vy;
     this.dt = 25; // 1000/25 = 40 frames per second
-    setInterval( () => { 
-        this.x += vx;  
+    setInterval(() => {
+        this.x += vx;
         this.y += vy;
-        console.log( this.x, this.y );
-    }, this.dt );
+        console.log(this.x, this.y);
+    }, this.dt);
 }
 
-b = new BallES6( 0, 0, 1, 1 );
+b = new BallES6(0, 0, 1, 1);
 
 // Ex
 // Use arrow function wherever it makes sense
 // In constructor functions and prototype extensions, it does not make sense to use fat arrows.
-var Entity = function( name, delay ) { 
+var Entity = function (name, delay) {
     this.name = name;
     this.delay = delay;
-  };
-  Entity.prototype.greet = function() {
+};
+Entity.prototype.greet = function () {
     setTimeout(() => {
-      console.log( 'Hi, I am ' + this.name );
-    }, this.delay );
-  };
-  
-  var java = new Entity( 'Java', 5000 );
-  var cpp = new Entity( 'C++', 30 );
-  java.greet();
-  cpp.greet();
+        console.log('Hi, I am ' + this.name);
+    }, this.delay);
+};
+
+var java = new Entity('Java', 5000);
+var cpp = new Entity('C++', 30);
+java.greet();
+cpp.greet();
