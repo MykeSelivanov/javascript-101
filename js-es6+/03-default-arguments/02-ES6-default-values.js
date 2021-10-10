@@ -1,18 +1,18 @@
 // ES6 supports default values. Whenever an argument is not given, the default value is substituted.
 
-function addCalendarEntry( 
-    event, 
-    date = new Date().getTime(), 
-    len = 60, 
-    timeout = 1000 ) {
+function addCalendarEntry(
+    event,
+    date = new Date().getTime(),
+    len = 60,
+    timeout = 1000) {
 
     return len;
 }
-var add=addCalendarEntry( 'meeting' );
+var add = addCalendarEntry('meeting');
 console.log(add); //outputs the default value set earlier
 
 // Suppose function f is given with two arguments, a and b.
-function f( a = a0, b = b0 ) { 
+function f(a = a0, b = b0) {
     //function logic 
 };
 
@@ -33,24 +33,24 @@ function f() {
 // THE ARGUMENTS ARRAY IS NOT AFFECTED
 // We often used the arguments array to handle a variable number of arguments:
 function printArgs() {
-    console.log( arguments );
+    console.log(arguments);
 }
-printArgs( 'first', 'second' );
+printArgs('first', 'second');
 
 // Bear in mind that the arguments array is not affected by the default parameter values in any way.
-function printArgs( first = 'No arguments' ) {
-    console.log( arguments );
+function printArgs(first = 'No arguments') {
+    console.log(arguments);
 }
 printArgs();
 
 // Ex1
 // Write a function that executes a callback function after a given delay in milliseconds. 
 // The default value of delay is one second.
-function executeCallback( callback, delay = 1000 ) {
-	console.log('Delay: ' + delay);
-  setTimeout( callback, delay );
+function executeCallback(callback, delay = 1000) {
+    console.log('Delay: ' + delay);
+    setTimeout(callback, delay);
 }
-executeCallback( () => console.log('Done'));
+executeCallback(() => console.log('Done'));
 
 // Ex2
 // printComment has a default value that’s initially 1, and is incremented by 1 after each call.
@@ -58,19 +58,19 @@ executeCallback( () => console.log('Done'));
 // We create a new variable lineNumber which is initialized to 1. 
 // This way, we are updating a variable rather than changing the default argument of the printComment function each time.
 let lineNumber = 1;
-function printComment( comment, line = lineNumber++ ) {
-  console.log( line, comment );
+function printComment(comment, line = lineNumber++) {
+    console.log(line, comment);
 }
 for (var i = 1; i <= 5; i++)
-  printComment('I should be lineNumber ' + i);
+    printComment('I should be lineNumber ' + i);
 
-  // Ex3
-function argList( productName, price = 100 ) {
-    console.log( arguments.length ); //(A)
-    console.log( productName === arguments[0] ); //(B)
-    console.log( price === arguments[1] ); //(C)
+// Ex3
+function argList(productName, price = 100) {
+    console.log(arguments.length); //(A)
+    console.log(productName === arguments[0]); //(B)
+    console.log(price === arguments[1]); //(C)
 };
-argList( 'Krill Oil Capsules' );
+argList('Krill Oil Capsules');
 
 // A - 1
 // // Even though we have specified that our function can have 2 arguments, we’ve already learned that it isn’t necessary 
