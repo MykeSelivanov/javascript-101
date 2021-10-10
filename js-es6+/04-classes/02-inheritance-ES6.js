@@ -13,7 +13,7 @@
 // The methods are written using the concise method syntax. 
 
 class Shape {
-    constructor( color ) {
+    constructor(color) {
         this.color = color;
     }
 
@@ -23,8 +23,8 @@ class Shape {
 }
 
 class Rectangle extends Shape {
-    constructor( color, width, height ) {
-        super( color );
+    constructor(color, width, height) {
+        super(color);
         this.width = width;
         this.height = height;
     }
@@ -34,8 +34,8 @@ class Rectangle extends Shape {
     }
 }
 
-let rectangle = new Rectangle( 'red', 5, 8 );
-console.log( "Area:\t\t" + rectangle.getArea() );
-console.log( "Color:\t\t" + rectangle.getColor() );
-console.log( "toString:\t" + rectangle.toString() );
+let rectangle = new Rectangle('red', 5, 8);
+console.log("Area:\t\t" + rectangle.getArea());
+console.log("Color:\t\t" + rectangle.getColor());
+console.log("toString:\t" + rectangle.toString());
 
