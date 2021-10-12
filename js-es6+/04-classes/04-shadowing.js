@@ -3,3 +3,20 @@
 
 // The child class SuperUser has redefined the function hasAccess
 
+class User {
+    constructor() {
+        this.accessMatrix = {};
+    }
+    hasAccess(page) {
+        return this.accessMatrix[page];
+    }
+}
+
+class SuperUser extends User {
+    hasAccess(page) {
+        return true;
+    }
+}
+
+var su = new SuperUser();
+su.hasAccess('ADMIN_DASHBOARD');
