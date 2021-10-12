@@ -2,7 +2,6 @@
 // is called shadowing.
 
 // The child class SuperUser has redefined the function hasAccess
-
 class User {
     constructor() {
         this.accessMatrix = {};
@@ -19,4 +18,4 @@ class SuperUser extends User {
 }
 
 var su = new SuperUser();
-su.hasAccess('ADMIN_DASHBOARD');
+console.log(su.hasAccess(page));
