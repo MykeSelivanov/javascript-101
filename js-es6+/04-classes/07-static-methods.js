@@ -8,4 +8,4 @@ class C {
 
 var c = C.create();
 //> constructor - ''Accessing constructor from the class'
-c.create(); //this will give an error
+// c.create(); //this will give an error
