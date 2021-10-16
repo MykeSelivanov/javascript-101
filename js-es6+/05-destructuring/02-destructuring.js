@@ -35,3 +35,6 @@ console.log( user2 === user, user2.name ); // true, Ashley
 // The side effect of the evaluation is that email and nextLesson are assigned to "ashley@ilovees2015.net" and 10 respectively. 
 // The value of the expression is user. Then user2 = user is evaluated, creating another handle 
 // (or call it reference or pointer depending on your taste) for the object accessible via user.
+
+let {name} = {email, nextLesson} = user;
+console.log( name ); // Ashley
