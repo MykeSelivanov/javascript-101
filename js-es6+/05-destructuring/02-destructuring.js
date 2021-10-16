@@ -16,4 +16,10 @@ let {
     nextLesson: nextLesson
 } = user;
 
-console.log(user)
+console.log(user);
+// In this case, the above code is equivalent with the following ES5 assignments:
+let email = user.email;
+let nextLesson = user.nextLesson;
+
+// Make sure you use the let keyword to initialize new variables. 
+// You can destructure an object or an array only if all the variables inside have been declared.
