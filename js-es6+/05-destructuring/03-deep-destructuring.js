@@ -20,3 +20,9 @@ let {
     ],
     nextLesson: eighth
 } = user;
+
+// Notice that the null value of the sixth field behaves in the same way as a default argument value of function arguments.
+
+console.log("first:\t\t" + first + "\nsecond:\t\t" + second + "\nthird:\t\t" + third +
+    "\nfourth:\t\t" + fourth + "\nfifth:\t\t" + fifth + "\nsixth:\t\t" + sixth +
+    "\nseventh:\t" + seventh + "\neighth:\t\t" + eighth);
