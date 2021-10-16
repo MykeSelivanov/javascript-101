@@ -26,3 +26,15 @@ let {
 console.log("first:\t\t" + first + "\nsecond:\t\t" + second + "\nthird:\t\t" + third +
     "\nfourth:\t\t" + fourth + "\nfifth:\t\t" + fifth + "\nsixth:\t\t" + sixth +
     "\nseventh:\t" + seventh + "\neighth:\t\t" + eighth);
+
+// Destructuring pitfalls
+
+// Don’t overuse destructuring, always keep your code readable!
+// suppose you make a typo, and write ‘neme’ instead of ‘name’.
+let { neme } = user;
+console.log(neme);
+// The typo silently assigns the value undefined to neme, potentially causing trouble.
+
+// In an L = R destructuring expression, R cannot be null or undefined, otherwise a TypeError is thrown:
+let testUser = null;
+let { name, email } = testUser;
