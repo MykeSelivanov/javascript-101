@@ -23,3 +23,8 @@ sumArgs(...arr);
 // As opposed to rest parameters, there are no restrictions on the location of the Spread operator in the parameter list. 
 // Therefore, the following call is also valid:
 sumArgs(...arr, ...arr, 100);
+
+// Strings are spread as arrays of characters - If you would like to process a string character by character, 
+// use the spread operator to create an array of one character long strings
+let spreadingStrings = 'Spreading Strings';
+let charArray = [...spreadingStrings];
