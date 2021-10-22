@@ -19,3 +19,36 @@ console.log(A);
 let nullArray = () => new Array(10).fill(null);
 let nullMatrix = nullArray().map(nullArray);
 console.log(nullMatrix);
+
+// Ex4
+// Rewrite ES5 in ES6
+// ES5
+function sumArgs() {
+    var result = 0;
+    for (var i = 0; i < arguments.length; ++i) {
+        result += arguments[i];
+    }
+    return result;
+}
+
+// ES6
+// Solution #1: Using a function declaration
+function sumArgs(...numbers) {
+    return numbers.reduce((sum, num) => {
+        return sum + num;
+    }, 0);
+}
+
+// Solution #2: Using arrow functions with a function body and explicit return
+let sumArgs = (...numbers) => {
+    return numbers.reduce((sum, num) => {
+        return sum + num;
+    }, 0);
+}
+
+
+// Solution #3: Using arrow functions with implicit return
+let sumArgs = (...numbers) =>
+    numbers.reduce((sum, num) => {
+        return sum + num;
+    }, 0);
