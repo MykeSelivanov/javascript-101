@@ -23,3 +23,11 @@ console.log(experimentObject[arr])               // 1
 console.log(experimentObject[arr.length])        // 2
 console.log(experimentObject['[object Object]']) // 3
 console.log(experimentObject[experimentObject])  // 3
+
+// - Arrays and objects are converted to their toString values.
+
+// - arr.toString() equals the concatenation of the toString value of each of its elements, joined by commas.
+
+// - The toString value of an object is [object Object] regardless of its contents.
+
+// - When creating or accessing a property of an object, the respective toString values are compared.
