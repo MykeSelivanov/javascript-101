@@ -26,7 +26,6 @@ let PreloaderAnimationMixin = { /* object */ };
 // Because Object.assign works in a way that it extends its first argument with the remaining list of arguments. 
 // This implies that the first argument of Object.assign may get new keys, or its values will be overwritten by a value 
 // originating from a mixed in object.
-
 let ValidatingMixinWithPreloader = Object.assign( 
     {}, 
     View, 
@@ -34,6 +33,16 @@ let ValidatingMixinWithPreloader = Object.assign(
     PreloaderAnimationMixin
 );
 
+// Syntax for Object.assign
+// The syntax for calling Object.assign is as follows:
+
+// Object.assign( targetObject, ...sourceObjects )
+
+// The return value of Object.assign is targetObject. The side-effect of calling Object.assign is that targetObject is mutated.
+
+// Object.assign makes a shallow copy of the properties and operations of ...sourceObjects into targetObject.
+
+// Example
 let horse = {
     horseName: 'QuickBucks',
     toString: function () {
