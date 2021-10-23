@@ -18,9 +18,14 @@
 // To fight the combinatoric explosion, we take these extensions as mixins and extend our object prototypes with the extensions that we need.
 
 // For instance, a validating view with a preloader animation can be defined in the following way:
-let View = { ... };
-let ValidationMixin = { ... };
-let PreloaderAnimationMixin = { ... };
+let View = { /* object */ };
+let ValidationMixin = { /* object */ };
+let PreloaderAnimationMixin = { /* object */ };
+
+// Why do we extend the empty object?
+// Because Object.assign works in a way that it extends its first argument with the remaining list of arguments. 
+// This implies that the first argument of Object.assign may get new keys, or its values will be overwritten by a value 
+// originating from a mixed in object.
 
 let ValidatingMixinWithPreloader = Object.assign( 
     {}, 
