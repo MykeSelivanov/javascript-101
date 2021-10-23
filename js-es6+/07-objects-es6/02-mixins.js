@@ -3,6 +3,31 @@
 
 // In ES6, Object.assign does the same thing as _.extend or _.mixin.
 
+// Why are mixins important?
+// They are important because the alternative of establishing a class hierarchy using inheritance is inefficient and rigid.
+
+// Suppose you have a view object, which can be defined with or without the following extensions:
+
+// validation
+// tooltips
+// abstractions for two-way data binding
+// toolbar
+// preloader animation
+
+// Assuming the order of the extensions does not matter, 32 different view types can be defined using the five enhancements above. 
+// To fight the combinatoric explosion, we take these extensions as mixins and extend our object prototypes with the extensions that we need.
+
+// For instance, a validating view with a preloader animation can be defined in the following way:
+let View = { ... };
+let ValidationMixin = { ... };
+let PreloaderAnimationMixin = { ... };
+
+let ValidatingMixinWithPreloader = Object.assign( 
+    {}, 
+    View, 
+    ValidationMixin, 
+    PreloaderAnimationMixin
+);
 
 let horse = {
     horseName: 'QuickBucks',
