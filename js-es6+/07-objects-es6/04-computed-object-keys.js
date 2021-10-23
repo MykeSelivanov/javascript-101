@@ -16,3 +16,10 @@ console.log(experimentObject);
 //                 arr: [1, 2, 3, 4, 5]
 // }
 
+// We can use any of the above keys to retrieve the above values from experimentObject
+console.log(experimentObject.arr)                  // [1,2,3,4,5]
+console.log(experimentObject['arr'])             // [1,2,3,4,5]
+console.log(experimentObject[arr])               // 1
+console.log(experimentObject[arr.length])        // 2
+console.log(experimentObject['[object Object]']) // 3
+console.log(experimentObject[experimentObject])  // 3
