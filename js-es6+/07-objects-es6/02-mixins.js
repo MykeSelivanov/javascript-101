@@ -4,7 +4,6 @@
 // In ES6, Object.assign does the same thing as _.extend or _.mixin.
 
 
-
 let horse = {
     horseName: 'QuickBucks',
     toString: function () {
@@ -33,3 +32,8 @@ let racer = Object.assign(
 );
 
 console.log(racer.toString());
+
+// Had we omitted the {} from the assembly of the racer object, seemingly, nothing would have changed, as 
+// racer.toString() would still have been "Frank on QuickBucks". However, notice that horse would have 
+// been === equivalent to racer, meaning, that the side-effect of executing Object.assign would have been the mutation 
+// of the horse object.
