@@ -30,6 +30,20 @@ obj.whoami();
 // Object.setPrototypeOf can change this prototype to any object
 
 // The super call saves some typing. Without super, we would have to write the following:
-Object.getPrototypeOf( obj ).whoami.call( this );
+Object.getPrototypeOf(obj).whoami.call(this);
 
 // Note that the concise method notation is mandatory for us to use the super keyword. Otherwise, a JavaScript error is thrown.
+let proto = {
+    whoami() { console.log('I am proto'); }
+};
+
+let obj = {
+    whoami: function () {
+        super.whoami();
+        console.log('I am obj');
+    }
+};
+
+Object.setPrototypeOf(obj, proto);
+
+obj.whoami();
