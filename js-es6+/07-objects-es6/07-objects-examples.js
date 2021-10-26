@@ -40,5 +40,24 @@ let basketProto = {
     pay() {
         console.log(this.getBasketValue() + ' has been paid');
     }
-
 };
+
+// // Ex3
+// Create an object myBasket, and set its prototype to the object created in Exercise 2 (it has already been prepended to the given
+//  code). Create an array field in myBasket, containing all the items that you purchase in the following format:
+// { itemName: 'string', itemPrice: 9.99 }
+// Redefine the addToBasket method such that it accepts an itemName and an itemPrice. 
+// Call the addToBasket method in the prototype for the price administration, and store the itemName-itemPrice 
+// data locally in your array. Make sure you modify the clearBasket method accordingly.
+let myBasket = {
+    items: [],
+    addToBasket(itemName, itemPrice) {
+        this.items.push({ itemName, itemPrice });
+        super.addToBasket(itemPrice);
+    },
+    clearBasket() {
+        this.items = [];
+        super.clearBasket();
+    }
+};
+Object.setPrototypeOf(myBasket, basketProto);
