@@ -18,3 +18,27 @@ let newBaskets = baskets.map(item => Object.assign(
 // We will use Object.assign. For each element of the basket array, we will create an object of default values, 
 // and we extend it with the element of the array, mixing in all the properties. If a key exists in both objects, 
 // the value in item is kept.
+
+// Ex2
+// Create a prototype object with the following methods:
+// - addToBasket( value ) adds value to the basket value,
+// - clearBasket() sets the basket value to 0
+// - getBasketValue() returns the basket value
+// - pay() logs the message {getBasketValue()} has been paid, where {getBasketValue()} is the return value of the method 
+// with the same name. We can pay for the same basket as many times as we’d like.
+let basketProto = {
+    value: 0,
+    addToBasket(itemValue) {
+        this.value += itemValue;
+    },
+    clearBasket() {
+        this.value = 0;
+    },
+    getBasketValue() {
+        return this.value;
+    },
+    pay() {
+        console.log(this.getBasketValue() + ' has been paid');
+    }
+
+};
