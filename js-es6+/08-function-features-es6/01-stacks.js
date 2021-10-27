@@ -22,9 +22,29 @@ function sumToN(n) {
     if (n <= 1) return n;
     return n + sumToN(n - 1);
 };
-
 console.time('recursion');
 console.log(sumToN(1000000));
 console.timeEnd('recursion');
 // RangeError: Maximum call stack size exceeded
 
+// How the following program is executed on the stack:
+function sumToN(n) {
+    if (n <= 1) return n;
+    return n + sumToN(n - 1);
+};
+console.log(sumToN(2));
+
+// Initially, a reference to the sumToN function is created on the global stack frame.
+
+// - Once sumToN(2) is called, another stack frame is created, containing the value of n, the expected return value, 
+// and a reference to sumToN.
+
+// - Once sumToN(1) is called, another stack frame is created with another value of n, the expected return value, 
+// and a reference to sumToN.
+
+// - Once sumToN returns 1, the last stack frame is destroyed.
+
+// - Once sumToN(2) is computed, the stack frame created in step (2) is destroyed.
+
+// - Beyond a five digit stack limit, execution stops, and a JavaScript error is thrown. 
+// We will combat this behavior with tail call optimization.
