@@ -61,3 +61,44 @@ let myBasket = {
     }
 };
 Object.setPrototypeOf(myBasket, basketProto);
+
+// Ex4
+// Add a removeFromBasket( index ) method. 
+// The parameter index should be the index of the element in the array that you would like to remove.
+//basketProto object given
+let basketProto = {
+    value: 0,
+    addToBasket(itemValue) {
+        this.value += itemValue;
+    },
+    clearBasket() {
+        this.value = 0;
+    },
+    getBasketValue() {
+        return this.value;
+    },
+    pay() {
+        console.log(this.getBasketValue() + ' has been paid');
+    }
+};
+
+// Using arrow functions preserves the external context, which is not myBasket. 
+// Therefore, accessing this would not give us the desired results. The call A.splice( index, 1 ) 
+// method removes A[index] from A mutating the original array, and returns an array of the removed elements. 
+// As we only removed one element, we find our element at index 0.
+let myBasket = {
+    items: [],
+    addToBasket(itemName, itemPrice) {
+        this.items.push({ itemName, itemPrice }); 
+        super.addToBasket(itemPrice);
+    },
+    clearBasket() {
+        this.items = [];
+        super.clearBasket();
+    },
+    removeFromBasket(index) {
+        if (typeof index !== 'number' || index < 0 || index >= this.items.length) return;
+        let removedElement = this.items.splice(index, 1)[0]; 
+        super.addToBasket(-removedElement.itemPrice);
+    }
+};
