@@ -30,3 +30,13 @@ function fib(n, a, b) {
         return fib(n - 1, a + b, a);
     }
 };
+// When run, here is what the function calls look like:
+fib(5, 1, 0);
+fib(4, 1, 1);
+fib(3, 2, 1);
+fib(2, 3, 2);
+fib(1, 5, 3);
+fib(0, 8, 5);
+// In this implementation, the entire state of the process is encapsulated in each function call. 
+// If we were to pause the process midway and start with a clean stack, we would still get the correct output. 
+// Moreover, the memory complexity is O(1).
