@@ -20,3 +20,17 @@ console.log(guessMyProperty.methodName.name);
 //> "methodName"
 console.log(guessMyProperty.methodName.bind(this).name);
 //> "bound methodName"
+
+// When it comes to getters and setters, retrieving method names is a bit more complicated:
+let propertyDescriptor = Object.getOwnPropertyDescriptor(
+    guessMyProperty, 'myProperty');
+
+console.log(propertyDescriptor.get.name);
+//> "get myProperty"
+console.log(propertyDescriptor.set.name);
+//> "set myProperty"
+
+// Function names provide you with limited debugging capabilities. For instance, you can create an automated test 
+// that checks if a function name is bound, making sure that no-one will delete the function binding in the code.
+
+// In theory, another use case is to retrieve the class name of an object by querying obj.constructor.name.
