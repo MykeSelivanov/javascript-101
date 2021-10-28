@@ -34,3 +34,9 @@ console.log(propertyDescriptor.set.name);
 // that checks if a function name is bound, making sure that no-one will delete the function binding in the code.
 
 // In theory, another use case is to retrieve the class name of an object by querying obj.constructor.name.
+
+// If you would still like to use the name property to retrieve the class of an object, note that it is bad practice. 
+// You can use new.target inside the constructor function just as well as the name property. Set the internal state of your 
+// object such that you will never need to retrieve the actual constructor of your object. Encapsulate all the roles and 
+// responsibilities of your object inside it. Checking for the constructor types outside the object definition results 
+// in worse maintainability and tighter coupling.
