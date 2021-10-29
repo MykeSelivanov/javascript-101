@@ -15,3 +15,12 @@ class Stack {
         return this._elements.pop();
     }
 }
+
+// Ex2
+// Write a tail call optimized solution for the following Fibonacci function.
+function fib(n) {
+    if (n <= 1) return n;
+    return fib(n - 1) + fib(n - 2);
+}
+
+// tail call optimization
