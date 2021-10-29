@@ -12,3 +12,6 @@ new MyConstructor();
 
 MyConstructor();
 //> false "undefined"
+
+// Whenever you call a constructor with the new operator, new.target contains a reference to the constructor. 
+// Whenever you call a constructor without the new operator, new.target will be undefined.
