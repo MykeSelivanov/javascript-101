@@ -16,6 +16,7 @@ class Stack {
     }
 }
 
+
 // Ex2
 // Write a tail call optimized solution for the following Fibonacci function.
 function fib(n) {
@@ -52,3 +53,16 @@ function fib2(n, acc1 = 1, acc2 = 0) {
 // Obviously, this implementation only works with non-negative integer inputs. 
 // We could also add another exit condition to handle invalid inputs:
 if (n < 0 || !Number.isInteger(n)) return NaN;
+
+
+
+// Ex3
+// Create a solution for the Fibonacci exercise that does not use recursion.
+function fib(n) {
+    let acc1 = 1; let acc2 = 0;
+    if (n <= 1) return n;
+    for (let i = 2; i <= n; ++i) {
+        [acc1, acc2] = [acc1 + acc2, acc1];
+    }
+    return acc1;
+}
