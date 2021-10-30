@@ -39,3 +39,16 @@ function fib2(n, acc1 = 1, acc2 = 0) {
 
 // - When calling fib2 with 0, the return value should be 0.
 // - When calling fib2 with a positive integer, the final return value in the last fib2 call is acc1.
+
+// Example:
+// fib2(5) becomes fib2(5, 1, 0) once the default values are assigned to the second and the third arguments
+// fib2(5, 1, 0) invokes fib2(4, 1, 1)
+// fib2(4, 1, 1) invokes fib2(3, 2, 1)
+// fib2(3, 2, 1) invokes fib2(2, 3, 2)
+// fib2(2, 3, 2) invokes fib2(1, 5, 3)
+// as n is 1 for fib2(1, 5, 3), 5 is returned as a result. 5 is the value of acc1.
+// 5 is returned by all recursive calls. Therefore, fib(5) also returns 5.
+
+// Obviously, this implementation only works with non-negative integer inputs. 
+// We could also add another exit condition to handle invalid inputs:
+if (n < 0 || !Number.isInteger(n)) return NaN;
