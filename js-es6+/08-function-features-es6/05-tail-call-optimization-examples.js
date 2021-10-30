@@ -24,3 +24,18 @@ function fib(n) {
 }
 
 // tail call optimization
+function fib2(n, acc1 = 1, acc2 = 0) {
+    if (n <= 0) return 0;
+    if (n === 1) return acc1;
+    return fib2(n - 1, acc1 + acc2, acc1);
+}
+
+// Explanaiton
+// We have to create accumulator variables to create proper tail calls. 
+// As we need to memorize the last two values of the sequence, we have to create two accumulators.
+
+// The accumulators will keep track of the last two elements that are needed for constructing the current Fibonacci number. 
+// Notice that the two accumulator values require us to create two separate exit conditions:
+
+// - When calling fib2 with 0, the return value should be 0.
+// - When calling fib2 with a positive integer, the final return value in the last fib2 call is acc1.
