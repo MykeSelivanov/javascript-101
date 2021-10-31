@@ -12,3 +12,11 @@ myObject[privateProperty2] = 'Zsolt';
 
 console.log(myObject[privateProperty1]);
 // Zsolt
+
+// As there is a one-to-one correspondence between symbol values and their string keys in the symbol registry, 
+// it is also possible to retrieve the string key. Use the Symbol.keyFor method.
+console.log(Symbol.keyFor(privateProperty1));
+//> "firstName"
+
+console.log(Symbol.keyFor(Symbol()));
+//> undefined
