@@ -74,3 +74,14 @@ console.log(clonedObject);
 //>    Symbol(): "value of myObject[ symbol2 ]"
 //>    __proto__: Object
 
+
+// Naming your symbols properly is essential in indicating what your symbol is used for. 
+// If you need additional semantic guidance, it is also possible to attach a description to your symbol. 
+// The description of the symbol appears in the string value of the symbol.
+let leftNode = Symbol('Binary tree node');
+let rightNode = Symbol('Binary tree node');
+console.log(leftNode)
+//> Symbol(Binary tree node)
+// Always provide a description for your symbols, and make your descriptions unique. 
+// If you use symbols for accessing private properties, treat their descriptions as if they were variable names.
+
