@@ -43,11 +43,34 @@ console.dir(myObject, { showHidden: true });
 // Not even the for-in loop or Object.keys can enumerate them:
 JSON.stringify(myObject)
 //> "{"publicProperty":"Value of myObject[ \"publicProperty\" ] "}"
-
 for (var prop in myObject) {
     console.log(prop, myObject[prop]);
 }
 //> publicProperty Value of myObject[ "publicProperty" ] 
-
 console.log(Object.keys(myObject));
 //> ["publicProperty"]
+
+// Even though properties with Symbol keys don’t appear in the above cases, these properties are not fully private in a strict sense. 
+// Object.getOwnPropertySymbols provides a way to retrieve the symbol keys of your objects:
+console.log(Object.getOwnPropertySymbols(myObject));
+//> [Symbol(), Symbol()]
+console.log(myObject[Object.getOwnPropertySymbols(myObject)[0]]);
+//> "Value of myObject[ symbol1 ]"
+
+// If you choose to represent private variables with Symbol keys, make sure you don’t use Object.getOwnPropertySymbols
+//  to retrieve properties that are intended to be private. In this case, the only use cases for Object.getOwnPropertySymbols 
+//  are testing and debugging.
+// As long as you respect the above rule, your object keys will be private from the perspective of developing your code. 
+// In practice, however, be aware that others will be able to access your private values.
+
+
+// Even though symbol keys are not enumerated by for...of, the spread operator, or Object.keys, 
+// they still make it to shallow copies of our objects:
+clonedObject = Object.assign({}, myObject);
+console.log(clonedObject);
+//> Object
+//>    publicProperty: "Value of myObject[ "publicProperty" ]"
+//>    Symbol(): "Value of myObject[ symbol1 ]"
+//>    Symbol(): "value of myObject[ symbol2 ]"
+//>    __proto__: Object
+
