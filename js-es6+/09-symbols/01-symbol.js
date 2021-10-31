@@ -37,3 +37,17 @@ console.log(myObject[symbol1]);
 // In some environments such as node and Microsoft Edge console, Symbol keys are not logged.
 // In order to see reveal the Symbol keys in Node env, you need to set showHidden flag to true
 console.dir(myObject, { showHidden: true });
+
+
+// Properties with a symbol key don’t appear in the JSON representation of your object. 
+// Not even the for-in loop or Object.keys can enumerate them:
+JSON.stringify(myObject)
+//> "{"publicProperty":"Value of myObject[ \"publicProperty\" ] "}"
+
+for (var prop in myObject) {
+    console.log(prop, myObject[prop]);
+}
+//> publicProperty Value of myObject[ "publicProperty" ] 
+
+console.log(Object.keys(myObject));
+//> ["publicProperty"]
