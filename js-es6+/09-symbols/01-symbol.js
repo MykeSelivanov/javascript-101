@@ -28,3 +28,12 @@ console.log(myObject);
 
 console.log(myObject[symbol1]);
 //> Value of myObject[ symbol1 ]
+
+// When console logging myObject inside the Chrome Developer Tools, you can see that both symbol properties are stored in the object. 
+// The literal "Symbol()" is the return value of the toString() method called on the symbol. 
+// This value denotes the presence of a symbol key in the console. 
+// We can retrieve the corresponding values if we have access to the right symbol.
+
+// In some environments such as node and Microsoft Edge console, Symbol keys are not logged.
+// In order to see reveal the Symbol keys in Node env, you need to set showHidden flag to true
+console.dir(myObject, { showHidden: true });
