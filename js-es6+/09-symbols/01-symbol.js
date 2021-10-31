@@ -85,3 +85,9 @@ console.log(leftNode)
 // Always provide a description for your symbols, and make your descriptions unique. 
 // If you use symbols for accessing private properties, treat their descriptions as if they were variable names.
 
+// Even if you pass the same description to two symbols, their value will still differ. 
+// Knowing the description does not make it possible for you to create the same symbol.
+let leftNode = Symbol('Binary tree node');
+let rightNode = Symbol('Binary tree node');
+console.log(leftNode === rightNode);
+//> false
