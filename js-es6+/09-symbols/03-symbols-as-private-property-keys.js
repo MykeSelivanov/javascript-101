@@ -11,3 +11,19 @@ class Square {
         return this[_width];
     }
 }
+
+// As long as you can hide the _width constant, you should be fine. One option to hide _width is to create a closure:
+let Square = (function () {
+
+    const _width = Symbol('width');
+
+    return class {
+        constructor(width0) {
+            this[_width] = width0;
+        }
+        getWidth() {
+            return this[_width];
+        }
+    }
+
+})();
