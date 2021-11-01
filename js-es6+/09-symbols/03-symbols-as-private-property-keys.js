@@ -25,5 +25,17 @@ let Square = (function () {
             return this[_width];
         }
     }
-
 })();
+
+// The advantage of this approach is that it becomes intentionally harder to access the private _width value of our objects. 
+// It is also evident which of our properties are intended to be public, and which private. 
+// The solution is not bulletproof, but some developers do use this approach in favor of indicating privacy by starting a variable with an underscore.
+
+// The drawbacks are also obvious:
+// - By calling Object.getOwnPropertySymbols, we can get access to the symbol keys. Therefore, private fields are not truly private.
+// - Developer experience is also worse, as they have to write more code. Accessing private properties is not as convenient as in Java or TypeScript for example.
+
+// The question is not whether it is possible to simulate private fields in JavaScript. 
+// The real question is whether you want to simulate them or not. Once you figure out that you don’t need
+//  truly private fields for development, you can agree whether you use symbols, weak maps (covered later),
+//   closures, or a simple underscore prefix in front of your variables.
