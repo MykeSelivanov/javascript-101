@@ -40,3 +40,14 @@ class C {
 
 let c = new C();
 c.logPrivateProperty();
+
+// The field privateProperty is not accessible in the c object. The solution also works when we extend the C class.
+class D extends C {
+    constructor() {
+        super();
+        console.log('Constructor of D');
+    }
+}
+
+let d = new D()
+d.logPrivateProperty()
