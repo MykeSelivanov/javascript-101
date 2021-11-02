@@ -22,3 +22,21 @@ function F() {
 let f = new F();
 console.log(f.publicProperty);  // returns 'a'
 console.log(f.privateProperty); // returns undefined
+
+// In order to use the same idea for classes, we have to place the method definitions that use private properties 
+// in the constructor method in a scope where the private properties are accessible. We will use Object.assign 
+// to accomplish this goal. 
+class C {
+    constructor() {
+        let privateProperty = 'a';
+        Object.assign(this,
+            {
+                logPrivateProperty() {
+                    console.log(privateProperty);
+                }
+            });
+    }
+}
+
+let c = new C();
+c.logPrivateProperty();
