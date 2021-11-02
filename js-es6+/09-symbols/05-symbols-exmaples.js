@@ -12,3 +12,13 @@ let mySquare = {
 // of hacking quick and dirty solutions
 // - Unlike symbols, there is no clear separation between public and private properties. Private properties appear 
 // in the public interface of an object and they are enumerated in for…of loops, using the spread operator, and Object.keys
+
+// Simulate truly private fields in JavaScript
+function F() {
+    let privateProperty = 'b';
+    this.publicProperty = 'a';
+}
+
+let f = new F();
+console.log(f.publicProperty);  // returns 'a'
+console.log(f.privateProperty); // returns undefined
