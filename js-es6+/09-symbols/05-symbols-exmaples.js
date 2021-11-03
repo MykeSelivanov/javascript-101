@@ -51,3 +51,8 @@ class D extends C {
 
 let d = new D()
 d.logPrivateProperty()
+
+// For the sake of completeness, there are two other ways for creating private variables:
+
+// - Weak maps. We can achieve true privacy with it, at the expense of writing less elegant code
+// - TypeScript: introduces compile time checks whether our code treats pri- vate variables as private.
