@@ -16,3 +16,16 @@ console.log('\u{1f600}'.codePointAt(0))             // is 128512
 console.log('\u{1f600}'.charCodeAt(1))              // is 56832
 console.log('\u{1f600}'.codePointAt(1))             // is 56832
 console.log('\u{1f600}'.startsWith('\u{1f600}'[0])) // is true
+
+// Note that the startsWith, endsWith, includes methods interpret the result in two-byte chunks.
+
+// The for-of loop interprets three and four byte long characters as one unit, scoring another convenience point for ES6.
+let str = '\u{1f600}\u{00fa}é';
+
+for (const ch of str) {
+    console.log(ch);
+}
+
+// - The for-of loop prints three characters, an emoji, ú, and é.
+// - [...str] spreads str character by character
+// - Even though [...str] has three elements, the length of the str string is 4. This is because the length of [...str][0] is 2.
