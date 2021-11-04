@@ -15,3 +15,19 @@ let message = 'hello';
 for (let ch of message) {
     console.log(ch);
 }
+
+// In ES5, three and four byte long characters are sometimes broken into 2-byte chunks.
+let text = '\u{1F601}\u{1F43C}';
+console.log('text: ', text);
+
+for (let i in text) {
+    console.log(text[i]);
+};
+
+console.log('-----');
+
+for (let c of text) {
+    console.log(c);
+};
+
+// Unlike the for-in loop, the for-of loop parses all Unicode characters properly, regardless of their size.
