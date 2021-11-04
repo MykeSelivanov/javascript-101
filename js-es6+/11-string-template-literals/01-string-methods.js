@@ -5,6 +5,7 @@
 
 console.log('Rindfleischetikettierungsüberwachungsaufgabenübertragungsgesetz'.startsWith( 'Rindfleisch' ));
 //> true
+
 console.log('not good'.endsWith( 'good' ));
 //> true
 
