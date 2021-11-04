@@ -29,3 +29,5 @@ for (const ch of str) {
 // - The for-of loop prints three characters, an emoji, ú, and é.
 // - [...str] spreads str character by character
 // - Even though [...str] has three elements, the length of the str string is 4. This is because the length of [...str][0] is 2.
+
+// Use the for-of loop or the spread operator to process characters of a string regardless of their length in bytes.
