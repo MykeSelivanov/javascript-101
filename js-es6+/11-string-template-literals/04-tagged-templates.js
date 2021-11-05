@@ -5,3 +5,9 @@ tagFunction(literalFragments, ...substitutionValues)
 // - literalFragments is an array of Strings that store fragments of the template literal. 
 // We use substitutions to split the original template literal.
 // - the rest parameter ...substitutionValues contains the values of ${...} substitutions.
+
+// Salutation tag example
+let salutation = literalFragments =>
+    'Hello, ' + literalFragments[0];
+
+console.log(salutation`Ashley`);
