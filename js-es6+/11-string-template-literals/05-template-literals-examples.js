@@ -129,3 +129,17 @@ console.log(template);
 
 // If you paste all the code in the Chrome developer tools, and then execute
 // document.body.innerHTML = header you can see the table of emojis appear.
+
+// Ex4 Find a way to create the following if-else clause in a template literal.
+if (10 % 2 == 0) {
+    console.log("Even");
+} else {
+    console.log("Odd");
+}
+
+// Solution
+`${ (10 % 2 == 0) ? "Even" : "Odd" }`
+
+// First of all, note that you don’t have to include conditions, there is always a way to describe the template in more steps.
+// If-else clauses are used mostly when we want to conditionally hide a template segment, or we want to do type checks, 
+// substitute default values, and avoid reference errors.
