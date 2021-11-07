@@ -118,3 +118,11 @@ ${[...digits5].map(c => `<th>${c}</th>`).join('')}
 ${rows}
 </table>`;
 console.log(template);
+
+// Define the header first. Notice the spread operator to handle the digits4 string as an array of characters.
+// Building the rows should be straightforward based on the first exercise.
+// - We used String.fromCodePoint( hexString ) to convert a string of a hexadecimal number to a Unicode character. “0x” denotes that the integer parser should parse a hexadecimal number
+// - Read the code starting in the rightmost indentation level, and proceed leftwards
+// - The map function of […digits4] prepares the cells of each row
+// - The map function of […digits5] prepares the five rows of the table
+// - Changing the granularity level of the template for debugging purposes is advised.
