@@ -126,3 +126,6 @@ console.log(template);
 // - The map function of […digits4] prepares the cells of each row
 // - The map function of […digits5] prepares the five rows of the table
 // - Changing the granularity level of the template for debugging purposes is advised.
+
+// If you paste all the code in the Chrome developer tools, and then execute
+// document.body.innerHTML = header you can see the table of emojis appear.
