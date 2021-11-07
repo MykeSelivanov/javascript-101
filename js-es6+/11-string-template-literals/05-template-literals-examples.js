@@ -92,3 +92,29 @@ let a = 1, b = 'ab', c = 'DeF';
 console.log(upper`x ${a} x ${b} x ${c} x`);
 
 // We have a textArray of length substitutions.length - 1. All we need to do is connect the text and substitution segments, and transform each substitution
+
+
+// Ex3 create a template literal that prints out all the emojis in a tabular format. The rows of the table should be the last 
+// character in the hexadecimal code of the emoji (0-F), while the columns should be the fourth character of the emoji (0-4).
+let prefix = '1F6';
+let digits4 = '01234';
+let digits5 = '01234567890ABCDEF';
+
+let rows = `${[...digits4].map(d4 => `
+<tr>
+<th>${d4}</th>
+${[...digits5].map(d5 => `
+<td>${String.fromCodePoint(
+    '0x' + prefix + d4 + d5)}</td>
+`).join('')}
+</tr>
+` ).join('')}
+`;
+let template = `<table>
+<tr>
+<th></th>
+${[...digits5].map(c => `<th>${c}</th>`).join('')}
+</tr>
+${rows}
+</table>`;
+console.log(template);
