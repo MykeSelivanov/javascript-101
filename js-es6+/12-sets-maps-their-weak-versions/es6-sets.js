@@ -28,3 +28,7 @@ colors.delete('green')
 
 console.log('\nAfter deleting: ')
 console.log(colors);
+
+// The Set constructor accepts an optional array argument with initial values. It eliminates all duplicates.
+let moreColors = new Set(['red', 'blue', 'red', 'orange']);
+console.log(moreColors);
