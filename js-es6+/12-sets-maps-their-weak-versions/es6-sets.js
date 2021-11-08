@@ -18,3 +18,13 @@ console.log('Size: ' + colors.size);
 
 console.log('has green: ' + colors.has('green') + '\nhas blue: ' + colors.has('blue'));
 //> true false
+
+console.log('Before deleting: ')
+console.log(colors);
+colors.delete('green')
+//> true
+colors.delete('green')
+//> false
+
+console.log('\nAfter deleting: ')
+console.log(colors);
