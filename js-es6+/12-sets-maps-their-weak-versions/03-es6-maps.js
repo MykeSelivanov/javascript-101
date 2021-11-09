@@ -17,3 +17,11 @@ horses.set(8, 'Chocolate');
 horses.set(3, 'Filippone');
 console.log(horses);
 
+// As the set method is chainable, the above code is equivalent to
+let horses2 = new Map().set(8, 'Chocolate').set(3, 'Filippone');
+console.log(horses2);
+
+// Using arrays of key-value pairs works as follows:
+let horses3 = new Map([[8, 'Chocolate'], [3, 'Filippone']]);
+console.log(horses3);
+
