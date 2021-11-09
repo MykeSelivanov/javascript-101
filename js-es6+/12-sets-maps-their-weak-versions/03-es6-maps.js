@@ -25,3 +25,18 @@ console.log(horses2);
 let horses3 = new Map([[8, 'Chocolate'], [3, 'Filippone']]);
 console.log(horses3);
 
+// The property size, and the methods has and delete also work for maps. The has and delete methods expect a key in the map. 
+// Also, we can get a value from the map using the get method and providing a key.
+console.log('Size:\t\t' + horses.size);
+//> 2
+
+console.log('has id=3:\t' + horses.has(3));
+//> true
+
+console.log('value at key=3:\t' + horses.get(3));
+//> "Filippone"
+
+horses.delete(3);
+console.log('\nAfter deleting:\t');
+console.log(horses);
+//> true
