@@ -20,3 +20,9 @@ delete firstElement;
 // Weak sets may only store objects.
 // Weak sets are not iterable.
 
+// The use cases for weak sets are limited. We can use them whenever we deal with objects that can be 
+// garbage collected from other sources, and we only want to check the existence of objects in the weak set.
+
+// For instance, whenever we traverse a graph, and we would like to detect cycles, we can store the nodes in 
+// weak sets during traversal.
+
