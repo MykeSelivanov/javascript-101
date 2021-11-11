@@ -13,3 +13,10 @@ console.log('has firstElement: ' + ws.has(firstElement));
 
 delete firstElement;
 // firstElement is removed from the weak set
+
+// Other characteristics of weak sets include:
+
+// You don’t have access to the size of the set.
+// Weak sets may only store objects.
+// Weak sets are not iterable.
+
