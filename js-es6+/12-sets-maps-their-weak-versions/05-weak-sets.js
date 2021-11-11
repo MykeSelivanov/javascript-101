@@ -5,3 +5,11 @@
 // garbage collection of the values while they are members of a set or map.
 
 // Weak sets are similar to regular sets. The main difference is that their elements may disappear once they are garbage collected.
+let firstElement = { order: 1 }, secondElement = { order: 2 };
+let ws = new WeakSet([firstElement, secondElement]);
+
+console.log('has firstElement: ' + ws.has(firstElement));
+//> true
+
+delete firstElement;
+// firstElement is removed from the weak set
