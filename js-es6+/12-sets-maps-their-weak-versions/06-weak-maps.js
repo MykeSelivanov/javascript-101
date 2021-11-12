@@ -14,3 +14,5 @@ console.log(wm.get(secondElement));
 
 delete secondElement;
 // secondElement is removed from the weak map
+
+// As soon as a key of the weak map is not referenced anymore, the key-value pair is removed from the weak map.
