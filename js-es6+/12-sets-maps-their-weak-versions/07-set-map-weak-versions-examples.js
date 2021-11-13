@@ -9,11 +9,25 @@ let removeDuplicatesFromArray2 = arr => [...new Set(arr)];
 
 // Make the property _width private for the below class using weak maps. Make sure the property is unique 
 // for each created object, and the property cannot be accessed from outside instances of the class.
-class Square {
-    constructor(width) {
-        this._width = width;
+// class Square {
+//     constructor(width) {
+//         this._width = width;
+//     }
+//     get area() {
+//         return this._width * this._width;
+//     }
+// }
+
+let Square = (function () {
+    let _width = new WeakMap();
+    class Square {
+        constructor(width) {
+            _width.set(this, width);
+        }
+        get area() {
+            let width = _width.get(this);
+            return width * width;
+        }
     }
-    get area() {
-        return this._width * this._width;
-    }
-}
+    return Square;
+})();
