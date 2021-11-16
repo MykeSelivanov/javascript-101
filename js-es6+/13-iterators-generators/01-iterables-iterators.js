@@ -26,3 +26,5 @@ let iteratorObject = {
 // - done is treated as a boolean. When done is true, the iteration ends, and value is not considered in the iteration.
 // - value is the upcoming value of the iteration. It is considered in the iteration if and only if done is false. 
 // When done is true, value becomes the return value of the iterator.
+
+// Example
