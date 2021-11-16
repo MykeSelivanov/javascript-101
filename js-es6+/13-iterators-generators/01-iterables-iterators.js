@@ -28,3 +28,27 @@ let iteratorObject = {
 // When done is true, value becomes the return value of the iterator.
 
 // Example
+let countdownIterator = {
+    countdown: 10,
+    next() {
+        this.countdown -= 1;
+        return {
+            done: this.countdown === 0,
+            value: this.countdown
+        };
+    }
+};
+
+let countdownIterable = {
+    [Symbol.iterator]() {
+        return Object.assign({}, countdownIterator)
+    }
+};
+
+let iterator = countdownIterable[Symbol.iterator]();
+
+console.log(iterator.next());
+//> Object {done: false, value: 9}
+
+console.log(iterator.next());
+//> Object {done: false, value: 8}
