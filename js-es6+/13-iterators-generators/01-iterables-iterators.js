@@ -52,3 +52,5 @@ console.log(iterator.next());
 
 console.log(iterator.next());
 //> Object {done: false, value: 8}
+
+// Note that the state of the iteration is preserved.
