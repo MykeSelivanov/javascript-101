@@ -57,3 +57,15 @@ console.log(iterator.next());
 // The role of Object.assign is that we create a shallow copy of the iterator object each time the iterable returns 
 // an iterator. This allows us to have multiple iterators on the same iterable object, storing their own internal state. 
 // Without Object.assign, we would just have multiple references to the same iterator object.
+
+let secondIterator = countdownIterable[Symbol.iterator]();
+let thirdIterator = countdownIterable[Symbol.iterator]();
+
+console.log( secondIterator.next() );
+//> Object {done: false, value: 9}
+
+console.log( thirdIterator.next() );
+//> Object {done: false, value: 9}
+
+console.log( secondIterator.next() );
+//> Object {done: false, value: 8}
