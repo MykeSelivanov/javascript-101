@@ -32,3 +32,10 @@ secondStringIterator.next();
 
 // Strings can be handled as arrays using the spread operator:
 
+let message = [...'ok'];
+
+let pairs = message.entries();
+
+for (let pair of pairs) {
+    console.log(pair);
+}
