@@ -26,3 +26,8 @@ console.log(horses.keys());
 
 console.log(horses.values());
 //> MapIterator {"QuickBucks", "Chocolate", "Filippone"}
+
+// You don’t need to create these iterators with the keys, values, or entries method though to perform an iteration 
+// on a set or a map. Sets and maps are iterable themselves. Therefore, they can be used in for-of loops.
+
+// A common destructuring pattern is to iterate the keys and values of a map using destructuring in a for-of loop:
