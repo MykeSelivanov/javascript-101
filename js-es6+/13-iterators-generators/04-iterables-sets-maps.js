@@ -37,6 +37,22 @@ for (let [key, value] of horses) {
 
 // When creating a set or a map, you can pass any iterable as an argument, provided that the results of 
 // the iteration can form a set or a map:
+let countdownIterator = {
+    countdown: 10,
+    next() {
+        this.countdown -= 1;
+        return {
+            done: this.countdown === 0,
+            value: this.countdown
+        };
+    }
+};
+
+let countdownIterable = {
+    [Symbol.iterator]() {
+        return Object.assign({}, countdownIterator)
+    }
+};
 let nineToOne = new Set(countdownIterable);
 console.log(nineToOne);
 
