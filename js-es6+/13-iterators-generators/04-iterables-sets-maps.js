@@ -34,3 +34,15 @@ console.log(horses.values());
 for (let [key, value] of horses) {
     console.log(key, value);
 }
+
+// When creating a set or a map, you can pass any iterable as an argument, provided that the results of 
+// the iteration can form a set or a map:
+let nineToOne = new Set(countdownIterable);
+console.log(nineToOne);
+
+let horses = new Map([
+    [5, 'QuickBucks'],
+    [8, 'Chocolate'],
+    [3, 'Filippone']
+]);
+console.log(horses);
