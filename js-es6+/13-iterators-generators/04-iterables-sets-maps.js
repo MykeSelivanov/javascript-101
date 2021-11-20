@@ -31,3 +31,6 @@ console.log(horses.values());
 // on a set or a map. Sets and maps are iterable themselves. Therefore, they can be used in for-of loops.
 
 // A common destructuring pattern is to iterate the keys and values of a map using destructuring in a for-of loop:
+for (let [key, value] of horses) {
+    console.log(key, value);
+}
